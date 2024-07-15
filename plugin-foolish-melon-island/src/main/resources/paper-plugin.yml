@@ -1,0 +1,4 @@
+name: MelonIsland
+version: '${project.version}'
+main: com.t13max.plugin.MelonIsland
+api-version: '1.21'
