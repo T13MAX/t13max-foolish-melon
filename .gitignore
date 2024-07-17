@@ -38,7 +38,8 @@ build/
 .DS_Store
 
 .idea/
-spigot-server/logs/*
-spigot-server/world/*
-spigot-server/world_nether/*
-spigot-server/world_the_end/*
+paper-server/*
+
+!paper-server/eula.txt
+!paper-server/paper-1.20.1-196.jar
+!paper-server/server.properties
