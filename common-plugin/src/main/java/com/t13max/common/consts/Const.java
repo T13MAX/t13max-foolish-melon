@@ -23,4 +23,8 @@ public interface Const {
     int CHEST_SIZE_27 = 27;
     //配置文件名
     String CONFIG_NAME = "config.yaml";
+
+    String JAR_URL_PRE = "tag:yaml.org,2002:com.t13max.";
+
+    String PLUGIN_CONFIG = JAR_URL_PRE + "common.config.PluginConfig";
 }

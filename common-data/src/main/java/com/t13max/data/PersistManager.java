@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.t13max.common.config.PluginConfig;
 import com.t13max.common.exception.DataException;
 import com.t13max.common.manager.ManagerBase;
+import com.t13max.common.plugin.PluginContext;
 import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PluginData;
 import com.zaxxer.hikari.HikariConfig;
@@ -38,8 +39,8 @@ public class PersistManager extends ManagerBase {
     @Override
     public void init() {
 
-        String url = PluginConfig.CONFIG.getDbUrl(); // 数据库文件路径
-        int poolSize = PluginConfig.CONFIG.getPoolSize();
+        String url = PluginContext.CONFIG.getDbUrl(); // 数据库文件路径
+        int poolSize = PluginContext.CONFIG.getPoolSize();
 
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
@@ -47,7 +48,6 @@ public class PersistManager extends ManagerBase {
         config.setMaximumPoolSize(poolSize);  // 设置连接池的最大连接数
 
         dataSource = new HikariDataSource(config);
-
 
         try {
             Connection connection = this.getConnection();

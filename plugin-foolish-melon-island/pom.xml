@@ -41,7 +41,7 @@
                 </executions>
             </plugin>
             <!--打包插件-->
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
@@ -55,7 +55,7 @@
                         <descriptor>src/assembly/descriptor.xml</descriptor>
                     </descriptors>
                     <finalName>melon-island</finalName>
-                    <outputDirectory>${project.basedir}/../spigot-server/plugins</outputDirectory>
+                    <outputDirectory>${project.basedir}/../paper-server/plugins</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -65,7 +65,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
         <resources>
             <resource>

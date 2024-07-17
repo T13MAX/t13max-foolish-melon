@@ -1,6 +1,7 @@
 package com.t13max.common.config;
 
 import com.t13max.common.consts.Const;
+import com.t13max.common.plugin.PluginContext;
 import lombok.Data;
 import org.yaml.snakeyaml.Yaml;
 
@@ -13,22 +14,11 @@ import org.yaml.snakeyaml.Yaml;
 @Data
 public class PluginConfig {
 
-    public static final PluginConfig CONFIG;
-
-    static {
-
-        Yaml yaml = new Yaml();
-
-        CONFIG = yaml.loadAs(PluginConfig.class.getClassLoader().getResourceAsStream(Const.CONFIG_NAME), PluginConfig.class);
-
-        CONFIG.check();
-    }
+    private int id;
 
     private String dbUrl;
 
     private int poolSize;
-
-    private int id;
 
     public PluginConfig() {
 

@@ -31,7 +31,7 @@ public class PackageUtil {
         String packageDirName = packageName.replace('.', '/');
         Enumeration<URL> dirs;
         try {
-            dirs = Thread.currentThread().getContextClassLoader().getResources(packageDirName);
+            dirs = PackageUtil.class.getClassLoader().getResources(packageDirName);
             while (dirs.hasMoreElements()) {
                 URL url = dirs.nextElement();
                 String protocol = url.getProtocol();

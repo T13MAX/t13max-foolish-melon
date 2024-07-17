@@ -2,6 +2,7 @@ package com.t13max.plugin.memory;
 
 import com.t13max.common.config.PluginConfig;
 import com.t13max.common.manager.ManagerBase;
+import com.t13max.common.plugin.PluginContext;
 import com.t13max.data.PersistManager;
 import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PlayerData;
@@ -14,6 +15,8 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -38,6 +41,11 @@ public class MemoryManager extends ManagerBase {
     }
 
     @Override
+    public List<Class<? extends ManagerBase>> getDependents() {
+        return Collections.singletonList(PersistManager.class);
+    }
+
+    @Override
     protected void onShutdown() {
         Log.melon.info("内存管理器开始onShutdown!");
 
@@ -53,7 +61,7 @@ public class MemoryManager extends ManagerBase {
     @Override
     public void init() {
         //插件数据id
-        int id = PluginConfig.CONFIG.getId();
+        int id = PluginContext.CONFIG.getId();
 
         PluginData pluginData = PersistManager.inst().getPluginData(id);
         if (pluginData == null) {

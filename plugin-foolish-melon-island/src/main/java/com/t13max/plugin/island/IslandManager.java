@@ -10,6 +10,9 @@ import com.t13max.plugin.memory.MemoryManager;
 import com.t13max.util.Log;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 岛屿管理器
  *
@@ -20,6 +23,11 @@ public class IslandManager extends ManagerBase {
 
     public static IslandManager inst() {
         return inst(IslandManager.class);
+    }
+
+    @Override
+    public List<Class<? extends ManagerBase>> getDependents() {
+        return Collections.singletonList(PersistManager.class);
     }
 
     public IslandData createIslandData(Player player) {
