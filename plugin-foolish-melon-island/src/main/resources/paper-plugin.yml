@@ -2,3 +2,21 @@ name: MelonIsland
 version: '${project.version}'
 main: com.t13max.plugin.MelonIsland
 api-version: '1.20'
+author: t13max
+description: 呆瓜空岛
+
+#命令
+commands:
+  main:
+    #描述这个命令
+    description: 前往主城
+    #用法
+    usage: /main
+    #执行此命令的人所需的权限
+    permission: test.me
+    #没有权限的提示消息
+    permission-message: 无权使用此命令
+  home:
+    description: 前往自己的岛屿
+    usage: /home
+    permission-message: 无权使用此命令

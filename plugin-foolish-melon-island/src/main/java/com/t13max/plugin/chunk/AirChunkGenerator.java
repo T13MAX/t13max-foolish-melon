@@ -1,6 +1,6 @@
 package com.t13max.plugin.chunk;
 
-import com.t13max.plugin.consts.Const;
+import com.t13max.common.consts.Const;
 import org.bukkit.Material;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.generator.WorldInfo;
@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 /**
+ * 空岛区块生成器
+ * 把整个世界掏空 在初始化一个起点
+ *
  * @Author: t13max
  * @Since: 22:13 2024/7/15
  */

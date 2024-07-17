@@ -5,10 +5,15 @@
     <groupId>com.t13max</groupId>
     <artifactId>t13max-foolish-melon</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>t13max-foolish-melon</name>
     <url>http://maven.apache.org</url>
+    <modules>
+        <module>common-plugin</module>
+        <module>common-util</module>
+        <module>common-data</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>
@@ -35,6 +40,22 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
         </dependency>
     </dependencies>
 </project>
