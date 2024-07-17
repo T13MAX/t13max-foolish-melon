@@ -17,4 +17,7 @@
 
 [Bukkit Development Note](https://bdn.tdiant.net/#/)
 
+[李芒果空岛](https://github.com/jsorrell/CarpetSkyAdditions/blob/main/docs/zh_cn/README.md)
+
 [我的世界中文wiki](https://minecraft-zh.gamepedia.com/Minecraft_Wiki)
+
