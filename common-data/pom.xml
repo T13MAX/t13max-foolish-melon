@@ -21,23 +21,23 @@
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-plugin</artifactId>
-            <version>0.1</version>
+            <version>${common-plugin.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>2.0.9</version>
+            <version>${fastjson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.41.2.2</version>
+            <version>${sqllite.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
-            <version>5.0.1</version>
+            <version>${hikari.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

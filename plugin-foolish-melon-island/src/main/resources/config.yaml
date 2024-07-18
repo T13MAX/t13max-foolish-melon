@@ -3,6 +3,6 @@
 #数据id
 id: 1
 #SqlLite的地址
-dbUrl: jdbc:sqlite:melon.db
+dbUrl: jdbc:sqlite:db/melon.db
 #连接数
 poolSize: 5

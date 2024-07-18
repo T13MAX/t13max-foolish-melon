@@ -3,17 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.t13max</groupId>
+    <parent>
+        <groupId>com.t13max</groupId>
+        <artifactId>t13max-foolish-melon</artifactId>
+        <version>0.1</version>
+    </parent>
     <artifactId>plugin-foolish-melon-island</artifactId>
-    <version>0.1</version>
     <packaging>jar</packaging>
-
     <name>MelonIsland</name>
 
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <build>
@@ -27,35 +30,17 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <!--打包插件-->
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>com.example.MainClass</mainClass>
-                        </manifest>
-                    </archive>
                     <descriptors>
                         <descriptor>src/assembly/descriptor.xml</descriptor>
                     </descriptors>
-                    <finalName>melon-island</finalName>
-                    <outputDirectory>${project.basedir}/../paper-server/plugins</outputDirectory>
+                    <finalName>melon-island-plugin</finalName>
+                    <outputDirectory>${project.basedir}/../output</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -65,7 +50,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -89,18 +74,18 @@
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-plugin</artifactId>
-            <version>0.1</version>
+            <version>${common-plugin.version}</version>
         </dependency>
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-data</artifactId>
-            <version>0.1</version>
+            <version>${common-data.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.20.1-R0.1-SNAPSHOT</version>
+            <version>${papermc.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -4,8 +4,9 @@ main: com.t13max.plugin.MelonIsland
 api-version: '1.20'
 author: t13max
 description: 呆瓜空岛
+loader: com.t13max.plugin.loader.MelonPluginLoader
 
-#命令
+  #命令
 commands:
   main:
     #描述这个命令
@@ -15,8 +16,8 @@ commands:
     #执行此命令的人所需的权限
     permission: test.me
     #没有权限的提示消息
-    permission-message: 无权使用此命令
+    permission-message: 你配么?
   home:
     description: 前往自己的岛屿
     usage: /home
-    permission-message: 无权使用此命令
+    permission-message: 你配么?

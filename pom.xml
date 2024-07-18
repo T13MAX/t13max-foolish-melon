@@ -18,6 +18,15 @@
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <common-plugin.version>0.1</common-plugin.version>
+        <common-data.version>0.1</common-data.version>
+        <common-util.version>0.1</common-util.version>
+        <melon.island.version>0.1</melon.island.version>
+        <fastjson.version>2.0.9</fastjson.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <hikari.version>5.0.1</hikari.version>
+        <sqllite.version>3.41.2.2</sqllite.version>
+        <papermc.version>1.20.1-R0.1-SNAPSHOT</papermc.version>
     </properties>
 
     <build>

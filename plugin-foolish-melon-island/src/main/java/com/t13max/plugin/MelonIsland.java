@@ -1,6 +1,5 @@
 package com.t13max.plugin;
 
-import com.t13max.common.config.PluginConfig;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
 import com.t13max.plugin.chunk.AirChunkGenerator;
@@ -18,21 +17,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+
 public final class MelonIsland extends JavaPlugin implements Listener {
 
     public static JavaPlugin PLUGIN;
 
     @Override
     public void onLoad() {
-        PluginContext.onLoad();
+
     }
 
     @Override
     public void onEnable() {
 
         try {
-
-            Class.forName("com.zaxxer.hikari.HikariConfig");
 
             Log.melon.info("瓜岛插件开始加载");
 

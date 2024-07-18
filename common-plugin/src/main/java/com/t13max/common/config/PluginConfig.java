@@ -1,9 +1,6 @@
 package com.t13max.common.config;
 
-import com.t13max.common.consts.Const;
-import com.t13max.common.plugin.PluginContext;
 import lombok.Data;
-import org.yaml.snakeyaml.Yaml;
 
 /**
  * 插件自定义配置

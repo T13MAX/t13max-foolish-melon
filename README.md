@@ -21,3 +21,4 @@
 
 [我的世界中文wiki](https://minecraft-zh.gamepedia.com/Minecraft_Wiki)
 
+[PaperDoc](https://docs.papermc.io/paper/dev/project-setup)
