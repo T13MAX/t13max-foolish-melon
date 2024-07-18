@@ -4,6 +4,8 @@ package com.t13max.nms.entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.level.Level;
+import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_20_R1.CraftWorld;
 
 /**
  * 无敌的羊羊!
@@ -13,8 +15,9 @@ import net.minecraft.world.level.Level;
  */
 public class BigSheepEntity extends Sheep {
 
-    public BigSheepEntity(Level world) {
-        super(EntityType.SHEEP, world);
+    public BigSheepEntity(World world) {
+        super(EntityType.SHEEP, ((CraftWorld) world).getHandle());
+        setPos(0,64,0);
     }
 
 

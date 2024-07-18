@@ -81,6 +81,11 @@
             <artifactId>common-data</artifactId>
             <version>${common-data.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.t13max</groupId>
+            <artifactId>nms-foolish-melon-island</artifactId>
+            <version>0.1</version>
+        </dependency>
 
         <dependency>
             <groupId>io.papermc.paper</groupId>

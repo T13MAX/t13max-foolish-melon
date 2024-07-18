@@ -14,8 +14,6 @@
         <module>common-util</module>
         <module>common-data</module>
         <module>plugin-foolish-melon-island</module>
-        <module>plugin-foolish-melon-nms</module>
-        <module>common-data</module>
         <module>nms-foolish-melon-island</module>
     </modules>
 
