@@ -17,7 +17,7 @@ public class PluginData {
     private int id = 1;
 
     //岛屿生成到第多少个了 根据这个判断下一个往哪里生成
-    private int index = 10000;
+    private int isIndex = 10000;
 
     public PluginData() {
     }
@@ -27,6 +27,6 @@ public class PluginData {
     }
 
     public PluginData(ResultSet resultSet) throws SQLException {
-        this.index = resultSet.getInt("index");
+        this.isIndex = resultSet.getInt("isIndex");
     }
 }

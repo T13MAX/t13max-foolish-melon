@@ -23,5 +23,7 @@ public interface Const {
     int CHEST_SIZE_27 = 27;
     //配置文件名
     String CONFIG_NAME = "config.yaml";
+    //建表的sql文件
+    String SQL = "create.sql";
 
 }

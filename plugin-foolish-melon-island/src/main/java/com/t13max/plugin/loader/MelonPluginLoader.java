@@ -46,8 +46,8 @@ public class MelonPluginLoader implements PluginLoader {
         //HikariCP
         result.add(new JarLibrary(Path.of("../libs/HikariCP-5.0.1.jar")));
         //log4j
-        result.add(new JarLibrary(Path.of("../libs/log4j-api-2.17.22.jar")));
-        result.add(new JarLibrary(Path.of("../libs/log4j-core-2.17.22.jar")));
+        result.add(new JarLibrary(Path.of("../libs/log4j-api-2.17.2.jar")));
+        result.add(new JarLibrary(Path.of("../libs/log4j-core-2.17.2.jar")));
         return result;
     }
 }

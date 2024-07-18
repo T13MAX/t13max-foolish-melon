@@ -39,8 +39,8 @@ public class IslandManager extends ManagerBase {
         int index = 0;
         //有点重 先暂时这样吧
         synchronized (pluginData) {
-            index = pluginData.getIndex() + 1;
-            pluginData.setIndex(index);
+            index = pluginData.getIsIndex() + 1;
+            pluginData.setIsIndex(index);
         }
 
         if (index == 0) {

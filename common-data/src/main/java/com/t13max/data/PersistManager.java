@@ -2,14 +2,18 @@ package com.t13max.data;
 
 import com.alibaba.fastjson.JSONObject;
 import com.t13max.common.config.PluginConfig;
+import com.t13max.common.consts.Const;
 import com.t13max.common.exception.DataException;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
 import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PluginData;
+import com.t13max.util.Log;
+import com.t13max.util.TextUtil;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import java.io.File;
 import java.sql.*;
 
 
@@ -45,25 +49,18 @@ public class PersistManager extends ManagerBase {
         String url = PluginContext.CONFIG.getDbUrl(); // 数据库文件路径
         int poolSize = PluginContext.CONFIG.getPoolSize();
 
+        //校验是否需要创建表
+        checkCreateTable();
+
+        //校验是否需要改表
+        checkAlertTable();
+
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
         config.setDriverClassName("org.sqlite.JDBC");
         config.setMaximumPoolSize(poolSize);  // 设置连接池的最大连接数
         config.setAutoCommit(true);
         dataSource = new HikariDataSource(config);
-
-        try {
-            Connection connection = this.getConnection();
-            Statement statement = connection.createStatement();
-            //校验是否需要创建表
-            checkCreateTable(statement);
-            //校验是否需要改表
-            checkAlertTable(statement);
-            statement.close();
-            connection.close();
-        } catch (Exception e) {
-            throw new DataException(e);
-        }
 
     }
 
@@ -73,15 +70,28 @@ public class PersistManager extends ManagerBase {
      * @Author t13max
      * @Date 15:52 2024/7/17
      */
-    private void checkCreateTable(Statement statement) throws SQLException {
-        //表不多 也不大 临时写在这吧 懒得读文件了
-        String sql = "CREATE TABLE IF NOT EXISTS IslandData (" +
-                "id INTEGER PRIMARY KEY," +
-                "name TEXT NOT NULL," +
-                "x INTEGER NOT NULL," +
-                "y INTEGER NOT NULL," +
-                "authorityMap BLOB NOT NULL)";
-        statement.execute(sql);
+    private void checkCreateTable() {
+
+        File dbFolder = new File("./", "db");
+        if (!dbFolder.exists()) {
+            if (!dbFolder.mkdir()) {
+                throw new DataException("db数据路径创建失败!");
+            }
+        }
+
+        String url = PluginContext.CONFIG.getDbUrl();
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            String sql = TextUtil.readSql(Const.SQL);
+            boolean execute = statement.execute(sql);
+            if (!execute) {
+                //表已存在会返回false
+                Log.common.info("忽略... checkCreate, sql执行失败, 表已存在会返回失败");
+            }
+        } catch (Exception e) {
+            throw new DataException("创建表失败, error=" + e.getMessage());
+        }
     }
 
     /**
@@ -90,7 +100,7 @@ public class PersistManager extends ManagerBase {
      * @Author t13max
      * @Date 15:52 2024/7/17
      */
-    private void checkAlertTable(Statement statement) throws SQLException {
+    private void checkAlertTable() {
         //后续完善 优化方案
     }
 
@@ -200,9 +210,9 @@ public class PersistManager extends ManagerBase {
     public boolean savePluginData(PluginData pluginData) {
         try {
             Connection connection = this.getConnection();
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO PluginData (id, index) values (?,?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO PluginData (id, isIndex) values (?,?)");
             statement.setInt(1, pluginData.getId());
-            statement.setInt(2, pluginData.getIndex());
+            statement.setInt(2, pluginData.getIsIndex());
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DataException(e);
@@ -219,7 +229,7 @@ public class PersistManager extends ManagerBase {
         try {
             Connection connection = this.getConnection();
             PreparedStatement statement = connection.prepareStatement("UPDATE PluginData set index=? where id=?");
-            statement.setInt(1, pluginData.getIndex());
+            statement.setInt(1, pluginData.getIsIndex());
             statement.setInt(2, pluginData.getId());
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
