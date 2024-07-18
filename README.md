@@ -8,6 +8,7 @@
 | [common-data]   | 持久化             | bukkit插件支持存储数据, 自定义的持久化系统有点麻烦暂时搁置 |
 | [common-util]   | 工具类             |                                   |
 | [plugin-xxx]    | xxx插件           | 未来可能会有多个插件                        |
+| [plugin-nms]    | nms专用包          | nms可能会随版本变化较大 所以单拎一个包             |
 | [hmcl-client]   | 我的世界客户端         | 内置在项目里, 方便拉取调试                    |
 | [paper-server]  | 我的世界服务器         | 内置在项目里, 方便拉取调试                    |
 
@@ -22,3 +23,5 @@
 [我的世界中文wiki](https://minecraft-zh.gamepedia.com/Minecraft_Wiki)
 
 [PaperDoc](https://docs.papermc.io/paper/dev/project-setup)
+
+[paper-nms-maven-plugin](https://github.com/Alvinn8/paper-nms-maven-plugin)

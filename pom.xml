@@ -13,6 +13,10 @@
         <module>common-plugin</module>
         <module>common-util</module>
         <module>common-data</module>
+        <module>plugin-foolish-melon-island</module>
+        <module>plugin-foolish-melon-nms</module>
+        <module>common-data</module>
+        <module>nms-foolish-melon-island</module>
     </modules>
 
     <properties>
@@ -27,6 +31,7 @@
         <hikari.version>5.0.1</hikari.version>
         <sqllite.version>3.41.2.2</sqllite.version>
         <papermc.version>1.20.1-R0.1-SNAPSHOT</papermc.version>
+        <nms.version>1.20.1-SNAPSHOT</nms.version>
     </properties>
 
     <build>

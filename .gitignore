@@ -40,7 +40,7 @@ build/
 .idea/
 paper-server/*
 output/*
-
+.paper-nms
 !paper-server/eula.txt
 !paper-server/paper-1.20.1-196.jar
 !paper-server/server.properties
