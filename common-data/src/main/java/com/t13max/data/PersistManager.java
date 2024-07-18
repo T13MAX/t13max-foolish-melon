@@ -33,6 +33,9 @@ public class PersistManager extends ManagerBase {
 
     @Override
     protected void onShutdown() {
+        if (dataSource == null) {
+            return;
+        }
         dataSource.close();
     }
 
@@ -46,7 +49,7 @@ public class PersistManager extends ManagerBase {
         config.setJdbcUrl(url);
         config.setDriverClassName("org.sqlite.JDBC");
         config.setMaximumPoolSize(poolSize);  // 设置连接池的最大连接数
-
+        config.setAutoCommit(true);
         dataSource = new HikariDataSource(config);
 
         try {
@@ -98,6 +101,9 @@ public class PersistManager extends ManagerBase {
      * @Date 15:53 2024/7/17
      */
     private Connection getConnection() throws SQLException {
+        if (dataSource == null) {
+            throw new DataException("dataSource不存在");
+        }
         return dataSource.getConnection();
     }
 

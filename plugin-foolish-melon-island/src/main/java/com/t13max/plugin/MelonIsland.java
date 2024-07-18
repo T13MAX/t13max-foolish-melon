@@ -23,9 +23,16 @@ public final class MelonIsland extends JavaPlugin implements Listener {
     public static JavaPlugin PLUGIN;
 
     @Override
+    public void onLoad() {
+        PluginContext.onLoad();
+    }
+
+    @Override
     public void onEnable() {
 
         try {
+
+            Class.forName("com.zaxxer.hikari.HikariConfig");
 
             Log.melon.info("瓜岛插件开始加载");
 
