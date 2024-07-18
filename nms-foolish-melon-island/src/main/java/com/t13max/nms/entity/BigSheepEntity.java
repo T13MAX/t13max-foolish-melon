@@ -19,9 +19,7 @@ public class BigSheepEntity extends Sheep {
 
 
     @Override
-    public float getHeadEatPositionScale(float delta) {
-
-
-        return super.getHeadEatPositionScale(delta);
+    protected void registerGoals() {
+        super.registerGoals();
     }
 }
