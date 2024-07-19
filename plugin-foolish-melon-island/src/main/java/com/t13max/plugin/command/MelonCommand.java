@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * 瓜岛的一个命令
+ * 不同于其他XxxCommand 此命令继承了Command 代表一个高层次的包装
+ * 其他的命令是具体实现
  *
  * @author: t13max
  * @since: 11:15 2024/7/19
@@ -39,6 +41,7 @@ public class MelonCommand extends Command {
      */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
+
         boolean success = false;
 
         if (!owningPlugin.isEnabled()) {
@@ -62,25 +65,6 @@ public class MelonCommand extends Command {
         }
 
         return success;
-    }
-
-    /**
-     * Sets the {@link CommandExecutor} to run when parsing this command
-     *
-     * @param executor New executor to run
-     */
-    public void setExecutor(@Nullable CommandExecutor executor) {
-        this.executor = executor == null ? owningPlugin : executor;
-    }
-
-    /**
-     * Gets the {@link CommandExecutor} associated with this command
-     *
-     * @return CommandExecutor object linked to this command
-     */
-    @NotNull
-    public CommandExecutor getExecutor() {
-        return executor;
     }
 
     /**

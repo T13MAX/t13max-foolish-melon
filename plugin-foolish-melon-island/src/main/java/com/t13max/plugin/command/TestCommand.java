@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
  * @Author: t13max
  * @Since: 21:41 2024/7/18
  */
-public class TestCmdExecutor implements IMelonCmdExecutor {
+public class TestCommand implements IMelonCommand {
 
     @Override
     public String getLabel() {

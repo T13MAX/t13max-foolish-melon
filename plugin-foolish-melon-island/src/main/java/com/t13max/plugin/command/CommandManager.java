@@ -23,7 +23,7 @@ import java.util.*;
 public class CommandManager extends ManagerBase {
 
     //命令集合
-    private final Map<String, IMelonCmdExecutor> commandMap = new HashMap<>();
+    private final Map<String, IMelonCommand> commandMap = new HashMap<>();
 
     /**
      * 获取当前实例对象
@@ -43,19 +43,21 @@ public class CommandManager extends ManagerBase {
             //创建实例
             for (Class<?> clazz : classSet) {
                 // 只需要加载CommandExecutor的实现
-                if (!IMelonCmdExecutor.class.isAssignableFrom(clazz) || Modifier.isAbstract(clazz.getModifiers())) {
+                if (!IMelonCommand.class.isAssignableFrom(clazz) || Modifier.isAbstract(clazz.getModifiers())) {
                     continue;
                 }
 
                 // 创建实例
                 Object inst = clazz.getDeclaredConstructor().newInstance();
-                IMelonCmdExecutor command = (IMelonCmdExecutor) inst;
+                IMelonCommand command = (IMelonCommand) inst;
                 //注册命令
                 commandMap.put(command.getLabel(), command);
             }
 
+            //解析yml中配置的命令
             List<Command> commandList = parseCommand();
 
+            //创建命令 注册到服务器
             for (Command command : commandList) {
                 MelonIsland.PLUGIN.getServer().getCommandMap().register(command.getLabel(), command);
             }
@@ -66,6 +68,14 @@ public class CommandManager extends ManagerBase {
         }
     }
 
+    @Override
+    protected void onShutdown() {
+        //只管注册不管删?
+        /*for (IMelonCommand command : this.commandMap.values()) {
+            MelonIsland.PLUGIN.getServer().getCommandMap().register()
+        }*/
+    }
+
     /**
      * 分发命令 执行
      *
@@ -73,7 +83,7 @@ public class CommandManager extends ManagerBase {
      * @Date 11:26 2024/7/17
      */
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        IMelonCmdExecutor melonCommand = this.commandMap.get(label);
+        IMelonCommand melonCommand = this.commandMap.get(label);
         if (melonCommand == null) {
             Log.melon.error("命令不存在! label={}", label);
             return false;

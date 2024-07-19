@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
  * @author: t13max
  * @since: 11:22 2024/7/17
  */
-public interface IMelonCmdExecutor {
+public interface IMelonCommand {
 
     //获取label 也就是命令
     String getLabel();
