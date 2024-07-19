@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-plugin</artifactId>
-            <version>0.1</version>
+            <version>${melon.island.version}</version>
         </dependency>
 
         <dependency>
