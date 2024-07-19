@@ -2,6 +2,7 @@ package com.t13max.plugin.menu;
 
 import com.t13max.common.exception.CommonException;
 import com.t13max.common.manager.ManagerBase;
+import com.t13max.common.plugin.PluginContext;
 import com.t13max.common.util.Log;
 import com.t13max.util.PackageUtil;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -39,7 +40,7 @@ public class MenuManager extends ManagerBase {
     public void init() {
 
         try {
-            Set<Class<?>> classSet = PackageUtil.scan("com.t13max.plugin.menu");
+            Set<Class<?>> classSet = PackageUtil.scan("com.t13max.plugin.menu", PluginContext.CLASS_LOADER);
             //创建实例
             for (Class<?> clazz : classSet) {
                 // 只需要加载CommandExecutor的实现

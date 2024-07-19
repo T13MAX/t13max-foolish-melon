@@ -39,7 +39,7 @@ public class CommandManager extends ManagerBase {
     public void init() {
 
         try {
-            Set<Class<?>> classSet = PackageUtil.scan("com.t13max.plugin.command");
+            Set<Class<?>> classSet = PackageUtil.scan("com.t13max.plugin.command", PluginContext.CLASS_LOADER);
             //创建实例
             for (Class<?> clazz : classSet) {
                 // 只需要加载CommandExecutor的实现

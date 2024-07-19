@@ -55,16 +55,16 @@
         </resources>
     </build>
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-plugin</artifactId>
             <version>${melon.island.version}</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>ca.bkaw</groupId>
             <artifactId>paper-nms</artifactId>
-            <version>1.20.1-SNAPSHOT</version>
+            <version>${nms.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

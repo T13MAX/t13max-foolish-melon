@@ -101,5 +101,12 @@
             <version>${papermc.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--这里也依赖了nms 但是插件内不做nms代码处理 加上这个只是为了不报错 -->
+        <dependency>
+            <groupId>ca.bkaw</groupId>
+            <artifactId>paper-nms</artifactId>
+            <version>${nms.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
