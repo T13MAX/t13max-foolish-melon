@@ -1,6 +1,9 @@
 package com.t13max.nms.entity;
 
 
+import com.t13max.nms.consts.MelonTextColor;
+import io.papermc.paper.adventure.AdventureComponent;
+import net.kyori.adventure.text.Component;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Sheep;
 import org.bukkit.World;
@@ -16,13 +19,9 @@ public class BigSheepEntity extends Sheep {
 
     public BigSheepEntity(World world) {
         super(EntityType.SHEEP, ((CraftWorld) world).getHandle());
-        setPos(0,64,0);
-    }
-
-
-    @Override
-    protected void registerGoals() {
-
+        setPos(0, 64, 0);
+        setCustomNameVisible(true);
+        setCustomName(new AdventureComponent(Component.text("汪小奇", MelonTextColor.BLUE)));
     }
 
 

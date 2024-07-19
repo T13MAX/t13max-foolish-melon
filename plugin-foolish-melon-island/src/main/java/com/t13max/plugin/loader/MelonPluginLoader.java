@@ -48,9 +48,16 @@ public class MelonPluginLoader implements PluginLoader {
         //log4j
         result.add(new JarLibrary(Path.of("../libs/log4j-api-2.17.2.jar")));
         result.add(new JarLibrary(Path.of("../libs/log4j-core-2.17.2.jar")));
+        //dom4j
+        result.add(new JarLibrary(Path.of("../libs/dom4j-2.1.4.jar")));
 
         //nms
-        result.add(new JarLibrary(Path.of("../libs/nms-foolish-melon-island-0.1.jar")));
+        result.add(new JarLibrary(Path.of("../libs/nms-foolish-melon-island-1.0.1.jar")));
+
+        //t13max
+        result.add(new JarLibrary(Path.of("../libs/t13max-core-1.0.1.jar")));
+        result.add(new JarLibrary(Path.of("../libs/t13max-ai-1.0.1.jar")));
+        result.add(new JarLibrary(Path.of("../libs/t13max-util-1.0.1.jar")));
         return result;
     }
 }

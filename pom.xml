@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <name>t13max-foolish-melon</name>
-    <url>http://maven.apache.org</url>
+    <url>https://gitee.com/t13max</url>
     <modules>
         <module>common-plugin</module>
         <module>common-data</module>
@@ -20,9 +20,9 @@
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <t13max-common.version>1.0.1</t13max-common.version>
-        <common-ai.version>1.0.1</common-ai.version>
-        <common-util.version>1.0.1</common-util.version>
-        <common-core.version>1.0.1</common-core.version>
+        <t13max-ai.version>1.0.1</t13max-ai.version>
+        <t13max-util.version>1.0.1</t13max-util.version>
+        <t13max-core.version>1.0.1</t13max-core.version>
         <melon.island.version>1.0.1</melon.island.version>
         <melon.nms.version>1.0.1</melon.nms.version>
         <fastjson.version>2.0.9</fastjson.version>
