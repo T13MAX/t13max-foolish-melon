@@ -1,6 +1,5 @@
 package com.t13max.plugin.memory;
 
-import com.t13max.common.config.PluginConfig;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
 import com.t13max.data.PersistManager;
@@ -9,7 +8,7 @@ import com.t13max.data.model.PlayerData;
 import com.t13max.data.model.PluginData;
 import com.t13max.plugin.MelonIsland;
 import com.t13max.plugin.persist.type.PlayerType;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import lombok.Getter;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;

@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.t13max</groupId>
         <artifactId>t13max-foolish-melon</artifactId>
-        <version>0.1</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>common-data</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-plugin</artifactId>
-            <version>${common-plugin.version}</version>
+            <version>${melon.island.version}</version>
         </dependency>
 
         <dependency>

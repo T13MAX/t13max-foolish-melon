@@ -6,7 +6,7 @@ import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PlayerData;
 import com.t13max.plugin.island.IslandManager;
 import com.t13max.plugin.memory.MemoryManager;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;

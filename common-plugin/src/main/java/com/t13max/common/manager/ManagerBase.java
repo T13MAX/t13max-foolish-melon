@@ -3,7 +3,7 @@ package com.t13max.common.manager;
 import com.t13max.common.dag.DAG;
 import com.t13max.common.dag.DAGNode;
 import com.t13max.common.exception.CommonException;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import com.t13max.util.PackageUtil;
 
 import java.lang.reflect.InvocationTargetException;

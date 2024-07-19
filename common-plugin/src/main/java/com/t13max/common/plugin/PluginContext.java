@@ -3,7 +3,7 @@ package com.t13max.common.plugin;
 import com.t13max.common.config.PluginConfig;
 import com.t13max.common.consts.Const;
 import com.t13max.common.exception.CommonException;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor;

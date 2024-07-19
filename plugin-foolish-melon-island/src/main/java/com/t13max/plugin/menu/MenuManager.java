@@ -2,7 +2,7 @@ package com.t13max.plugin.menu;
 
 import com.t13max.common.exception.CommonException;
 import com.t13max.common.manager.ManagerBase;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import com.t13max.util.PackageUtil;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;

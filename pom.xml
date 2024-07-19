@@ -4,14 +4,13 @@
 
     <groupId>com.t13max</groupId>
     <artifactId>t13max-foolish-melon</artifactId>
-    <version>0.1</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>t13max-foolish-melon</name>
     <url>http://maven.apache.org</url>
     <modules>
         <module>common-plugin</module>
-        <module>common-util</module>
         <module>common-data</module>
         <module>plugin-foolish-melon-island</module>
         <module>nms-foolish-melon-island</module>
@@ -20,14 +19,16 @@
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <common-plugin.version>0.1</common-plugin.version>
-        <common-data.version>0.1</common-data.version>
-        <common-util.version>0.1</common-util.version>
-        <melon.island.version>0.1</melon.island.version>
+        <t13max-common.version>1.0.1</t13max-common.version>
+        <melon.island.version>1.0.1</melon.island.version>
+        <melon.nms.version>1.0.1</melon.nms.version>
         <fastjson.version>2.0.9</fastjson.version>
         <snakeyaml.version>2.2</snakeyaml.version>
         <hikari.version>5.0.1</hikari.version>
         <sqllite.version>3.41.2.2</sqllite.version>
+        <junit.version>4.13.2</junit.version>
+        <log4j.version>2.17.2</log4j.version>
+        <lombok.version>1.18.30</lombok.version>
         <papermc.version>1.20.1-R0.1-SNAPSHOT</papermc.version>
         <nms.version>1.20.1-SNAPSHOT</nms.version>
     </properties>
@@ -50,24 +51,24 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.17.2</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.17.2</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -23,7 +23,8 @@ public class TestCommand implements IMelonCommand {
         if (!player.isOp()) return false;
 
         World world = player.getWorld();
-        new BigSheepEntity(world);
+        BigSheepEntity bigSheepEntity = new BigSheepEntity(world);
+
         return true;
     }
 }

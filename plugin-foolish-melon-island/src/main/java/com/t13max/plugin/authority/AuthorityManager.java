@@ -5,7 +5,7 @@ import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PlayerData;
 import com.t13max.plugin.memory.MemoryManager;
 import com.t13max.plugin.persist.type.PlayerType;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import org.bukkit.entity.Player;
 
 /**

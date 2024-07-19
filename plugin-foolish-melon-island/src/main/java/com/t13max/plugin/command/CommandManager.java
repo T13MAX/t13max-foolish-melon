@@ -4,7 +4,7 @@ import com.t13max.common.exception.CommonException;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
 import com.t13max.plugin.MelonIsland;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import com.t13max.util.PackageUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

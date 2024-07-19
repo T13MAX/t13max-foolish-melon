@@ -3,7 +3,6 @@ package com.t13max.nms.entity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Sheep;
-import net.minecraft.world.level.Level;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_20_R1.CraftWorld;
 
@@ -23,6 +22,8 @@ public class BigSheepEntity extends Sheep {
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
+
     }
+
+
 }

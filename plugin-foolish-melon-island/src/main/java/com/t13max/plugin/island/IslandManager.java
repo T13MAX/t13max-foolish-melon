@@ -7,7 +7,7 @@ import com.t13max.data.PersistManager;
 import com.t13max.data.model.IslandData;
 import com.t13max.data.model.PluginData;
 import com.t13max.plugin.memory.MemoryManager;
-import com.t13max.util.Log;
+import com.t13max.common.util.Log;
 import org.bukkit.entity.Player;
 
 import java.util.Collections;

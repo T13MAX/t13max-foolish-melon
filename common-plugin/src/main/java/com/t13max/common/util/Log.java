@@ -1,4 +1,4 @@
-package com.t13max.util;
+package com.t13max.common.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
