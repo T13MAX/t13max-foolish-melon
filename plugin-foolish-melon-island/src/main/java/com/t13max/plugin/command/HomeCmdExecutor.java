@@ -21,7 +21,7 @@ import java.util.List;
  * @author: t13max
  * @since: 17:01 2024/7/17
  */
-public class HomeCommand implements IMelonCommand {
+public class HomeCmdExecutor implements IMelonCmdExecutor {
 
     @Override
     public String getLabel() {

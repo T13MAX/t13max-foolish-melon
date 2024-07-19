@@ -2,6 +2,8 @@ package com.t13max.common.config;
 
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * 插件自定义配置
  *
@@ -16,6 +18,8 @@ public class PluginConfig {
     private String dbUrl;
 
     private int poolSize;
+
+    Map<String, Map<String, Object>> commands;
 
     public PluginConfig() {
 

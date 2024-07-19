@@ -3,46 +3,9 @@ version: '${project.version}'
 main: com.t13max.plugin.MelonIsland
 api-version: '1.20'
 author: t13max
-description: "呆瓜空岛"
+description: "foolish melon island"
 website: https://gitee.com/t13max/t13max-foolish-melon
 loader: com.t13max.plugin.loader.MelonPluginLoader
 
-commands:
-  acommandxxxxx:
-    description: "This is a command"
-    usage: "/acommandxxxxx <arg>"
-    aliases: [cmd, command]
-    permission: permission.node
-    permission-message: "You do not have permission to use this command"
-#命令
-#commands:
-#  xxx:
-#    #描述这个命令
-#    description: "管理员测试用命令"
-#    #用法
-#    usage: "/xxx <arg>"
-#    #别名
-#    aliases: [ xx, xxxxx ]
-#    #执行此命令的人所需的权限
-#    #permission: permission.op
-#    #没有权限的提示消息
-#    permission-message: "你配么?"
-#  main:
-#    description: "前往主城"
-#    usage: "/main"
-#    permission-message: "你配么?"
-#  home:
-#    description: "前往自己的岛屿"
-#    usage: "/home"
-#    permission-message: "你配么?"
-
-#权限列表
-#permissions:
-#  #权限
-#  permission.op:
-#    description: "op节点"
-#    #默认为op 可以是not op true false
-#    default: op
-#    #子节点 默认继承父结点
-#    children:
-#      permission.op.melon: false
+settings:
+  timeout-time: 600

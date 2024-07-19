@@ -3,11 +3,8 @@ package com.t13max.plugin.command;
 import com.t13max.plugin.consts.MelonTextColor;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -16,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * @author: t13max
  * @since: 11:08 2024/7/17
  */
-public class MainCommand implements IMelonCommand {
+public class MainCmdExecutor implements IMelonCmdExecutor {
 
     @Override
     public String getLabel() {

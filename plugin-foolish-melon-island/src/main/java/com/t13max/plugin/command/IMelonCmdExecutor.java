@@ -1,7 +1,6 @@
 package com.t13max.plugin.command;
 
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
@@ -10,7 +9,7 @@ import org.bukkit.entity.Player;
  * @author: t13max
  * @since: 11:22 2024/7/17
  */
-public interface IMelonCommand {
+public interface IMelonCmdExecutor {
 
     //获取label 也就是命令
     String getLabel();
