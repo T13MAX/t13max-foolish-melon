@@ -40,7 +40,7 @@ public class PluginContext {
      */
     private static void loadConfig() {
 
-        Log.common.info("瓜岛插件, 加载配置...");
+        Log.melon.info("瓜岛插件, 加载配置...");
 
         ClassLoader classLoader = PluginConfig.class.getClassLoader();
 

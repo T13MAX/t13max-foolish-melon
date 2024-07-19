@@ -89,7 +89,7 @@
         <dependency>
             <groupId>com.t13max</groupId>
             <artifactId>common-ai</artifactId>
-            <version>${t13max-common.version}</version>
+            <version>${common-ai.version}</version>
         </dependency>
 
         <dependency>

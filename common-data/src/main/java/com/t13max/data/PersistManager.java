@@ -86,7 +86,7 @@ public class PersistManager extends ManagerBase {
             boolean execute = statement.execute(sql);
             if (!execute) {
                 //表已存在会返回false
-                Log.common.info("忽略... checkCreate, sql执行失败, 表已存在会返回失败");
+                Log.persist.info("忽略... checkCreate, sql执行失败, 表已存在会返回失败");
             }
         } catch (Exception e) {
             throw new DataException("创建表失败, error=" + e.getMessage());
