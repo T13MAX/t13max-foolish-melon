@@ -82,7 +82,7 @@ public class PersistManager extends ManagerBase {
         try {
             Connection connection = DriverManager.getConnection(url);
             Statement statement = connection.createStatement();
-            String sql = TextUtil.readSql(Const.SQL);
+            String sql = TextUtil.readSql(Const.SQL, PluginContext.CLASS_LOADER);
             boolean execute = statement.execute(sql);
             if (!execute) {
                 //表已存在会返回false

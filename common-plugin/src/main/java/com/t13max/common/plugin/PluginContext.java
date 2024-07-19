@@ -16,7 +16,11 @@ import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor;
  */
 public class PluginContext {
 
+    //瓜岛配置
     public static PluginConfig CONFIG;
+
+    //插件的类加载器
+    public static ClassLoader CLASS_LOADER;
 
     /**
      * 插件enable的时候调用
@@ -24,11 +28,12 @@ public class PluginContext {
      * @Author: t13max
      * @Since: 21:42 2024/7/17
      */
-    public static void onEnable() {
+    public static void onEnable(ClassLoader classLoader) {
 
         //加载配置
         loadConfig();
 
+        CLASS_LOADER = classLoader;
         //其他
     }
 

@@ -3,6 +3,7 @@ package com.t13max.plugin;
 import com.t13max.ai.behavior4j.BehaviorTree;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
+import com.t13max.common.pos.Position;
 import com.t13max.plugin.chunk.AirChunkGenerator;
 import com.t13max.plugin.command.CommandManager;
 import com.t13max.plugin.menu.MenuManager;
@@ -39,9 +40,11 @@ public final class MelonIsland extends JavaPlugin implements Listener {
             PLUGIN = this;
 
             Log.melon.info("瓜岛插件, 初始化插件上下文...");
-            PluginContext.onEnable();
+            PluginContext.onEnable(MelonIsland.class.getClassLoader());
 
             Log.melon.info("瓜岛插件, 初始化所有Manager...");
+            //因为插件的依赖类被单独加载 无法扫描到插件内的类 所以需要手动指定类加载器
+            ManagerBase.initialize(PluginContext.CLASS_LOADER);
             ManagerBase.initAllManagers();
 
             Log.melon.info("瓜岛插件已加载");
