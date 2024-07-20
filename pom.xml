@@ -13,7 +13,6 @@
         <module>common-plugin</module>
         <module>common-data</module>
         <module>plugin-foolish-melon-island</module>
-        <module>nms-foolish-melon-island</module>
     </modules>
 
     <properties>

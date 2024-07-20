@@ -1,6 +1,7 @@
 package com.t13max.plugin.command;
 
 import com.t13max.nms.entity.BigSheepEntity;
+import com.t13max.nms.entity.MelonMonster;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -25,8 +26,9 @@ public class TestCommand implements IMelonCommand {
 
         World world = player.getWorld();
 
-        BigSheepEntity bigSheepEntity = new BigSheepEntity(world);
-        bigSheepEntity.spawn();
+        //BigSheepEntity bigSheepEntity = new BigSheepEntity(world);
+        MelonMonster melonMonster = new MelonMonster(world);
+        melonMonster.spawn();
         return true;
     }
 }

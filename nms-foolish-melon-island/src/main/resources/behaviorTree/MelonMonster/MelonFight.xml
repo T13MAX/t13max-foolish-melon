@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: MelonMonster.xml-->
+<behavior name="MelonFight" agenttype="MonsterAgent" version="5">
+    <node class="ProbabilitySelector" id="0">
+        <node class="DecoratorWeight" id="1" DecorateWhenChildEnds="false" Weight="10">
+            <node class="ActionNode" id="2">
+                <property Method="Self.MonsterAgent::arrowAttack()"/>
+                <property ResultOption="BT_SUCCESS"/>
+            </node>
+        </node>
+        <node class="DecoratorWeight" id="3" DecorateWhenChildEnds="false" Weight="10">
+            <node class="ActionNode" id="4">
+                <property Method="Self.MonsterAgent::commonAttack()"/>
+                <property ResultOption="BT_SUCCESS"/>
+            </node>
+        </node>
+        <node class="DecoratorWeight" id="5" DecorateWhenChildEnds="false" Weight="10">
+            <node class="ActionNode" id="6">
+                <property Method="Self.MonsterAgent::magicAttack()"/>
+                <property ResultOption="BT_SUCCESS"/>
+            </node>
+        </node>
+        <node class="DecoratorWeight" id="7" DecorateWhenChildEnds="false" Weight="10">
+            <node class="ActionNode" id="8">
+                <property Method="Self.MonsterAgent::potionAttack()"/>
+                <property ResultOption="BT_SUCCESS"/>
+            </node>
+        </node>
+        <node class="DecoratorWeight" id="9" DecorateWhenChildEnds="false" Weight="10">
+            <node class="ActionNode" id="10">
+                <property Method="Self.MonsterAgent::potionDefend()"/>
+                <property ResultOption="BT_SUCCESS"/>
+            </node>
+        </node>
+    </node>
+</behavior>

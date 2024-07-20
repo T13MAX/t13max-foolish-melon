@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<behavior name="pet/Task_OnFight" agenttype="PetAgent" version="5">
+    <node class="Task" id="0">
+        <property Prototype="Self.SmartAgent::onFight()"/>
+        <property IsHTN="false"/>
+        <node class="CaseSelectorNode" id="21">
+            <property Condtion="getAgent().getPetMode()"/>
+            <node class="CaseNode" id="24" CaseValue="0">
+                <node class="Parallel" id="1" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="55" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="56">
+                            <attachment class="PreActionNode" id="57" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="Equal"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="58">
+                                <property Method="Self.SmartAgent::delAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="59">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,0)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="28" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="47">
+                            <node class="Or" id="48">
+                                <node class="ConditionNode" id="49">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerDeath()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="50">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeave()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="51">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeaveScene()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="52">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerOutRange(15)"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="53">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isTargetDead()"/>
+                                    <property Opr="true"/>
+                                </node>
+                            </node>
+                            <node class="ActionNode" id="54">
+                                <property Method="Self.SmartAgent::enterIdle()"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="25" DecorateWhenChildEnds="false">
+                        <node class="Repeat" id="44" Count="-1" DecorateWhenChildEnds="true" DoneWithinFrame="false">
+                            <node class="CaseSelectorNode" id="84">
+                                <property Condtion="getAgent().getPetMode()"/>
+                                <node class="CaseNode" id="83" CaseValue="0">
+                                    <node class="Sequence" id="45">
+                                        <node class="ActionNode" id="46">
+                                            <property Method="Self.SmartAgent::chooseSkillIfAbsent()"/>
+                                            <property ResultOption="BT_SUCCESS"/>
+                                        </node>
+                                        <node class="ActionNode" id="60">
+                                            <property Method="Self.SmartAgent::chaseTarget()"/>
+                                            <property ResultOption="BT_INVALID"/>
+                                        </node>
+                                        <node class="ActionNode" id="61">
+                                            <property Method="Self.SmartAgent::stopMotion()"/>
+                                            <property ResultOption="BT_SUCCESS"/>
+                                        </node>
+                                        <node class="ActionNode" id="62">
+                                            <property Method="Self.SmartAgent::attackTarget()"/>
+                                            <property ResultOption="BT_INVALID"/>
+                                        </node>
+                                    </node>
+                                </node>
+                                <node class="CaseNode" id="86" CaseValue="1">
+                                    <node class="ActionNode" id="87">
+                                        <property Method="Self.SmartAgent::enterIdle()"/>
+                                        <property ResultOption="BT_SUCCESS"/>
+                                    </node>
+                                </node>
+                                <node class="CaseNode" id="85" CaseValue="2">
+                                    <node class="ActionNode" id="88">
+                                        <property Method="Self.SmartAgent::enterIdle()"/>
+                                        <property ResultOption="BT_SUCCESS"/>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node class="CaseNode" id="18" CaseValue="1">
+                <node class="Parallel" id="2" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="64" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="74">
+                            <attachment class="PreActionNode" id="75" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="Equal"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="76">
+                                <property Method="Self.SmartAgent::delAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="77">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,1)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="6" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="29">
+                            <node class="Or" id="31">
+                                <node class="ConditionNode" id="34">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerDeath()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="35">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeave()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="36">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeaveScene()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="37">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerOutRange(15)"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="5">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isTargetDead()"/>
+                                    <property Opr="true"/>
+                                </node>
+                            </node>
+                            <node class="ActionNode" id="32">
+                                <property Method="Self.SmartAgent::enterIdle()"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="7" DecorateWhenChildEnds="false">
+                        <node class="Repeat" id="4" Count="-1" DecorateWhenChildEnds="true" DoneWithinFrame="false">
+                            <node class="Sequence" id="26">
+                                <node class="ActionNode" id="27">
+                                    <property Method="Self.PetAgent::weightSelectSkill(10000)"/>
+                                    <property ResultOption="BT_INVALID"/>
+                                </node>
+                                <node class="Selector" id="8">
+                                    <node class="Sequence" id="9">
+                                        <attachment class="PreActionNode" id="14" flag="precondition">
+                                            <property BinaryOperator="And"/>
+                                            <property Operator="Equal"/>
+                                            <property Opl="Self.SmartAgent::getMagicType()"/>
+                                            <property Opr2="const int 10"/>
+                                            <property Phase="Enter"/>
+                                        </attachment>
+                                        <node class="AssignmentNode" id="30">
+                                            <property CastRight="false"/>
+                                            <property Opl="getAgent().tempLong1"/>
+                                            <property Opr="getAgent().getOwnerId()"/>
+                                        </node>
+                                        <node class="ActionNode" id="12">
+                                            <property
+                                                    Method="Self.PetAgent::followAndAttackFriend(long Self.BaseAgent::tempLong1,15)"/>
+                                            <property ResultOption="BT_SUCCESS"/>
+                                        </node>
+                                    </node>
+                                    <node class="Sequence" id="10">
+                                        <attachment class="PreActionNode" id="17" flag="precondition">
+                                            <property BinaryOperator="And"/>
+                                            <property Operator="Equal"/>
+                                            <property Opl="Self.SmartAgent::getMagicType()"/>
+                                            <property Opr2="const int 11"/>
+                                            <property Phase="Enter"/>
+                                        </attachment>
+                                        <node class="AssignmentNode" id="16">
+                                            <property CastRight="false"/>
+                                            <property Opl="getAgent().tempLong1"/>
+                                            <property Opr="getAgent().getObjId()"/>
+                                        </node>
+                                        <node class="ActionNode" id="19">
+                                            <property
+                                                    Method="Self.PetAgent::followAndAttackFriend(long Self.BaseAgent::tempLong1,1)"/>
+                                            <property ResultOption="BT_SUCCESS"/>
+                                        </node>
+                                    </node>
+                                    <node class="Sequence" id="11">
+                                        <attachment class="PreActionNode" id="13" flag="precondition">
+                                            <property BinaryOperator="And"/>
+                                            <property Operator="NotEqual"/>
+                                            <property Opl="Self.SmartAgent::getMagicType()"/>
+                                            <property Opr2="const int 10"/>
+                                            <property Phase="Enter"/>
+                                        </attachment>
+                                        <attachment class="PreActionNode" id="15" flag="precondition">
+                                            <property BinaryOperator="And"/>
+                                            <property Operator="NotEqual"/>
+                                            <property Opl="Self.SmartAgent::getMagicType()"/>
+                                            <property Opr2="const int 11"/>
+                                            <property Phase="Enter"/>
+                                        </attachment>
+                                        <node class="ActionNode" id="39">
+                                            <property Method="Self.PetAgent::changeOwnerTargetId()"/>
+                                            <property ResultOption="BT_INVALID"/>
+                                        </node>
+                                        <node class="ActionNode" id="20">
+                                            <property Method="Self.SmartAgent::chaseTarget()"/>
+                                            <property ResultOption="BT_INVALID"/>
+                                        </node>
+                                        <node class="ActionNode" id="3">
+                                            <property Method="Self.SmartAgent::stopMotion()"/>
+                                            <property ResultOption="BT_SUCCESS"/>
+                                        </node>
+                                        <node class="ActionNode" id="23">
+                                            <property Method="Self.SmartAgent::attackTarget()"/>
+                                            <property ResultOption="BT_INVALID"/>
+                                        </node>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node class="CaseNode" id="22" CaseValue="2">
+                <node class="Parallel" id="33" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="78" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="79">
+                            <attachment class="PreActionNode" id="80" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="NotEqual"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="81">
+                                <property Method="Self.SmartAgent::addAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="82">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,2)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="63" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="65">
+                            <node class="Or" id="66">
+                                <node class="ConditionNode" id="67">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerDeath()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="68">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeave()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="69">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerLeaveScene()"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="70">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isOwnerOutRange(15)"/>
+                                    <property Opr="true"/>
+                                </node>
+                                <node class="ConditionNode" id="71">
+                                    <property Operator="Equal"/>
+                                    <property Opl="getAgent().isTargetDead()"/>
+                                    <property Opr="true"/>
+                                </node>
+                            </node>
+                            <node class="ActionNode" id="72">
+                                <property Method="Self.SmartAgent::enterIdle()"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="38" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="40">
+                            <node class="ConditionNode" id="41">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerOutRange(25)"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="ActionNode" id="42">
+                                <property Method="Self.PetAgent::transferOwnerPos(2)"/>
+                                <property ResultOption="BT_INVALID"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="73" DecorateWhenChildEnds="false">
+                        <node class="ActionNode" id="43">
+                            <property Method="Self.SmartAgent::moveFollowOwner(5,4,35)"/>
+                            <property ResultOption="BT_SUCCESS"/>
+                        </node>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+</behavior>

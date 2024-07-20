@@ -13,5 +13,7 @@ public class Log {
     public static Logger def = LogManager.getLogger("DEFAULT");
     public static Logger persist = LogManager.getLogger("PERSIST");
     public static Logger melon = LogManager.getLogger("PLUGIN_MELON");
+    public static Logger nms = LogManager.getLogger("NMS");
+    public static Logger ai = LogManager.getLogger("AI");
 
 }

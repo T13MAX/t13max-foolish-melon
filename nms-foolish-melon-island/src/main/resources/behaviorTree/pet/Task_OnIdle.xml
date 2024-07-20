@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: pet\common\Task_OnIdle.xml-->
+<behavior name="pet/Task_OnIdle" agenttype="PetAgent" version="5">
+    <node class="Task" id="3">
+        <property Prototype="Self.SmartAgent::onIdle()"/>
+        <property IsHTN="false"/>
+        <node class="CaseSelectorNode" id="11">
+            <property Condtion="getAgent().getPetMode()"/>
+            <node class="CaseNode" id="27" CaseValue="0">
+                <node class="Parallel" id="28" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="45" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="46">
+                            <attachment class="PreActionNode" id="47" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="Equal"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="48">
+                                <property Method="Self.SmartAgent::delAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="49">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,0)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="29" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="30">
+                            <node class="ConditionNode" id="31">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerOutRange(25)"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="ActionNode" id="32">
+                                <property Method="Self.PetAgent::transferOwnerPos(2)"/>
+                                <property ResultOption="BT_INVALID"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="34" DecorateWhenChildEnds="false">
+                        <node class="ActionNode" id="33">
+                            <property Method="Self.SmartAgent::moveFollowOwner(5,4,35)"/>
+                            <property ResultOption="BT_SUCCESS"/>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="35" DecorateWhenChildEnds="false">
+                        <node class="ActionNode" id="41">
+                            <property Method="Self.SmartAgent::searchEnemy()"/>
+                            <property ResultOption="BT_SUCCESS"/>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node class="CaseNode" id="10" CaseValue="1">
+                <node class="Parallel" id="1" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="0" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="40">
+                            <attachment class="PreActionNode" id="42" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="Equal"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="43">
+                                <property Method="Self.SmartAgent::delAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="44">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,1)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="6" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="7">
+                            <node class="ConditionNode" id="8">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerOutRange(25)"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="ActionNode" id="9">
+                                <property Method="Self.PetAgent::transferOwnerPos(2)"/>
+                                <property ResultOption="BT_INVALID"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="36" DecorateWhenChildEnds="false">
+                        <node class="ActionNode" id="2">
+                            <property Method="Self.SmartAgent::moveFollowOwner(5,4,35)"/>
+                            <property ResultOption="BT_SUCCESS"/>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="37" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="12">
+                            <node class="ConditionNode" id="14">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerInFight()"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="AssignmentNode" id="13">
+                                <property CastRight="false"/>
+                                <property Opl="getAgent().tempLong1"/>
+                                <property Opr="getAgent().getOwnerId()"/>
+                            </node>
+                            <node class="ActionNode" id="4">
+                                <property Method="Self.PetAgent::changeOwnerTargetId()"/>
+                                <property ResultOption="BT_INVALID"/>
+                                <attachment class="PreActionNode" id="5" flag="precondition">
+                                    <property BinaryOperator="And"/>
+                                    <property Operator="LessEqual"/>
+                                    <property Opl="Self.SmartAgent::getDistance(long Self.BaseAgent::tempLong1)"/>
+                                    <property Opr2="const float 12"/>
+                                    <property Phase="Enter"/>
+                                </attachment>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node class="CaseNode" id="15" CaseValue="2">
+                <node class="Parallel" id="16" Coordinator="RESUME" Policy="SEQUENCE">
+                    <node class="AlwaysSuccess" id="78" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="79">
+                            <attachment class="PreActionNode" id="80" flag="precondition">
+                                <property BinaryOperator="And"/>
+                                <property Operator="NotEqual"/>
+                                <property Opl="Self.BaseAgent::getLocalInt(&quot;limit&quot;)"/>
+                                <property Opr2="const int 2"/>
+                                <property Phase="Enter"/>
+                            </attachment>
+                            <node class="ActionNode" id="81">
+                                <property Method="Self.SmartAgent::addAura(51)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                            <node class="ActionNode" id="82">
+                                <property Method="Self.BaseAgent::setLocalInt(&quot;limit&quot;,2)"/>
+                                <property ResultOption="BT_SUCCESS"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="17" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="18">
+                            <node class="ConditionNode" id="19">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerOutRange(25)"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="ActionNode" id="20">
+                                <property Method="Self.PetAgent::transferOwnerPos(2)"/>
+                                <property ResultOption="BT_INVALID"/>
+                            </node>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="38" DecorateWhenChildEnds="false">
+                        <node class="ActionNode" id="21">
+                            <property Method="Self.SmartAgent::moveFollowOwner(5,4,35)"/>
+                            <property ResultOption="BT_SUCCESS"/>
+                        </node>
+                    </node>
+                    <node class="AlwaysSuccess" id="39" DecorateWhenChildEnds="false">
+                        <node class="Sequence" id="22">
+                            <node class="ConditionNode" id="23">
+                                <property Operator="Equal"/>
+                                <property Opl="getAgent().isOwnerInFight()"/>
+                                <property Opr="true"/>
+                            </node>
+                            <node class="AssignmentNode" id="24">
+                                <property CastRight="false"/>
+                                <property Opl="getAgent().tempLong1"/>
+                                <property Opr="getAgent().getOwnerId()"/>
+                            </node>
+                            <node class="ActionNode" id="25">
+                                <property Method="Self.PetAgent::changeOwnerTargetId()"/>
+                                <property ResultOption="BT_INVALID"/>
+                                <attachment class="PreActionNode" id="26" flag="precondition">
+                                    <property BinaryOperator="And"/>
+                                    <property Operator="LessEqual"/>
+                                    <property Opl="Self.SmartAgent::getDistance(long Self.BaseAgent::tempLong1)"/>
+                                    <property Opr2="const float 12"/>
+                                    <property Phase="Enter"/>
+                                </attachment>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+</behavior>

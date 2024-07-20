@@ -4,7 +4,6 @@ package com.t13max.nms.entity;
 import com.t13max.nms.consts.MelonTextColor;
 import io.papermc.paper.adventure.AdventureComponent;
 import net.kyori.adventure.text.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Sheep;
 import org.bukkit.World;
@@ -33,4 +32,8 @@ public class BigSheepEntity extends Sheep {
         craftWorld.addEntity(this, CreatureSpawnEvent.SpawnReason.DEFAULT);
     }
 
+    @Override
+    protected void registerGoals() {
+
+    }
 }
