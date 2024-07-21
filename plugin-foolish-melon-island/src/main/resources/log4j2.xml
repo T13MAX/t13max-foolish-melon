@@ -7,10 +7,10 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="log" fileName="${LOG_HOME}/battle/battle.log" append="false">
+        <File name="log" fileName="${LOG_HOME}/melon/melon-island.log" append="false">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
-        <RollingFile name="RollingFileInfo" fileName="${LOG_HOME}/battle/info.log"
+        <RollingFile name="RollingFileInfo" fileName="${LOG_HOME}/melon/info.log"
                      filePattern="logs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
             <Policies>
@@ -24,7 +24,7 @@
                 <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
             </filters>
         </RollingFile>
-        <RollingFile name="RollingFileError" fileName="${LOG_HOME}/battle/error.log"
+        <RollingFile name="RollingFileError" fileName="${LOG_HOME}/melon/error.log"
                      filePattern="logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
             <Policies>
