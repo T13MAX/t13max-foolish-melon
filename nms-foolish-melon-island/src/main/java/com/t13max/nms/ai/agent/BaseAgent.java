@@ -2,7 +2,7 @@ package com.t13max.nms.ai.agent;
 
 import com.t13max.ai.Blackboard;
 import com.t13max.ai.behavior4j.BehaviorTree;
-import com.t13max.ai.data.BehaviorTreeManager;
+import com.t13max.ai.behavior4j.data.BehaviorTreeManager;
 import com.t13max.common.util.Log;
 
 import java.util.HashMap;
