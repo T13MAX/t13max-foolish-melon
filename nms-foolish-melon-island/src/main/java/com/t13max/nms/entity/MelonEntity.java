@@ -1,7 +1,5 @@
 package com.t13max.nms.entity;
 
-//import com.t13max.util.RandomUtil;
-
 import com.t13max.util.RandomUtil;
 import lombok.Getter;
 import lombok.Setter;
