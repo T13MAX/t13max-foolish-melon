@@ -1,8 +1,8 @@
 package com.t13max.nms.ai.agent;
 
 import com.t13max.ai.Blackboard;
-import com.t13max.ai.behavior4j.BehaviorTree;
-import com.t13max.ai.behavior4j.data.BehaviorTreeManager;
+import com.t13max.ai.btree.BehaviorTree;
+import com.t13max.ai.btree.utils.BehaviorTreeManager;
 import com.t13max.common.util.Log;
 
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public abstract class BaseAgent<T> {
         }
 
         behaviorTree = BehaviorTreeManager.getInstance().createBehaviorTree(btName);
-        behaviorTree.setAgent(this);
+        behaviorTree.setOwner(this);
     }
 
     public void update() {

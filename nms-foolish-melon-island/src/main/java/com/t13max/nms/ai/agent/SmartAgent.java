@@ -2,7 +2,7 @@ package com.t13max.nms.ai.agent;
 
 
 import com.t13max.ai.Blackboard;
-import com.t13max.ai.behavior4j.BTNode;
+import com.t13max.ai.btree.BTNode;
 import com.t13max.common.util.Log;
 import com.t13max.nms.entity.MelonEntity;
 import com.t13max.util.RandomUtil;
@@ -45,7 +45,7 @@ public class SmartAgent<T extends MelonEntity> extends BaseAgent<T> {
         Log.ai.info("searchEnemy");
         int hasTarget = getLocalInt("hasTarget");
         if (hasTarget == 1) return BTNode.Status.BT_SUCCESS;
-        if (RandomUtil.getRanNumByInterval(5) == 0) {
+        if (RandomUtil.nextInt(5) == 0) {
             setLocalInt("hasTarget", 1);
         }
         return BTNode.Status.BT_SUCCESS;

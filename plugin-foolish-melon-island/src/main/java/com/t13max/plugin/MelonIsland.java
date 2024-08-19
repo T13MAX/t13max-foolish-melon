@@ -1,9 +1,7 @@
 package com.t13max.plugin;
 
-import com.t13max.ai.behavior4j.BehaviorTree;
 import com.t13max.common.manager.ManagerBase;
 import com.t13max.common.plugin.PluginContext;
-import com.t13max.common.pos.Position;
 import com.t13max.plugin.chunk.AirChunkGenerator;
 import com.t13max.plugin.command.CommandManager;
 import com.t13max.plugin.menu.MenuManager;
